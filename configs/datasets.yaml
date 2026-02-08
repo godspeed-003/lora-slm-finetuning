@@ -1,0 +1,59 @@
+# Dataset Configuration for LoRA Fine-tuning
+datasets:
+  # Core LM Training
+  - name: "wikitext"
+    config: "wikitext-103-raw-v1"
+    split: "train"
+    text_field: "text"
+
+  - name: "wikitext"
+    config: "wikitext-2-raw-v1"
+    split: "train"
+    text_field: "text"
+
+  - name: "bookcorpusopen"
+    config: "plain_text"
+    split: "train"
+    text_field: "text"
+
+  - name: "roneneldan/TinyStories"
+    config: "default"
+    split: "train"
+    text_field: "text"
+
+  # News & Reviews
+  - name: "ag_news"
+    config: "default"
+    split: "train"
+    text_field: "text"
+
+  - name: "yelp_review_full"
+    config: "default"
+    split: "train"
+    text_field: "text"
+
+  - name: "amazon_polarity"
+    config: "default"
+    split: "train"
+    text_field: "content"
+
+  # Summarization
+  - name: "cnn_dailymail"
+    config: "3.0.0"
+    split: "train"
+    text_field: "article"
+
+  - name: "xsum"
+    config: "default"
+    split: "train"
+    text_field: "document"
+
+  # Dialogue
+  - name: "daily_dialog"
+    config: "default"
+    split: "train"
+    text_field: "dialog"
+
+# Sampling settings (for T4 GPU memory limits)
+max_samples_per_dataset: 50000
+validation_split: 0.1

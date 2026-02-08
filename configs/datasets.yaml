@@ -1,13 +1,10 @@
 # Dataset Configuration for LoRA Fine-tuning
+# OPTIMIZED FOR COLAB FREE (3-4 hour training time)
+
 datasets:
-  # Core LM Training
+  # Core LM Training (3 datasets)
   - name: "wikitext"
     config: "wikitext-103-raw-v1"
-    split: "train"
-    text_field: "text"
-
-  - name: "wikitext"
-    config: "wikitext-2-raw-v1"
     split: "train"
     text_field: "text"
 
@@ -16,7 +13,7 @@ datasets:
     split: "train"
     text_field: "text"
 
-  # News & Reviews
+  # News (2 datasets)
   - name: "ag_news"
     config: "default"
     split: "train"
@@ -27,12 +24,7 @@ datasets:
     split: "train"
     text_field: "text"
 
-  - name: "amazon_polarity"
-    config: "default"
-    split: "train"
-    text_field: "content"
-
-  # Summarization
+  # Summarization (2 datasets)
   - name: "cnn_dailymail"
     config: "3.0.0"
     split: "train"
@@ -43,18 +35,17 @@ datasets:
     split: "train"
     text_field: "document"
 
-  # QA
+  # QA & Sentiment (2 datasets)
   - name: "squad"
     config: "plain_text"
     split: "train"
     text_field: "context"
 
-  # Additional text corpus
   - name: "imdb"
     config: "plain_text"
     split: "train"
     text_field: "text"
 
-# Sampling settings (for T4 GPU memory limits)
-max_samples_per_dataset: 50000
-validation_split: 0.1
+# CRITICAL: Reduce sample size for Colab constraints
+max_samples_per_dataset: 10000 # ← CHANGED FROM 50000
+validation_split: 0.15

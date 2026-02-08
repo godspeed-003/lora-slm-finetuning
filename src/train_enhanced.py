@@ -213,7 +213,7 @@ def train_enhanced(
         max_grad_norm=model_config['training']['max_grad_norm'],
         seed=model_config['training']['seed'],
         report_to="wandb",
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
         logging_first_step=True,

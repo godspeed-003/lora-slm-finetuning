@@ -11,11 +11,6 @@ datasets:
     split: "train"
     text_field: "text"
 
-  - name: "bookcorpusopen"
-    config: "plain_text"
-    split: "train"
-    text_field: "text"
-
   - name: "roneneldan/TinyStories"
     config: "default"
     split: "train"
@@ -48,11 +43,15 @@ datasets:
     split: "train"
     text_field: "document"
 
-  # Dialogue
-  - name: "daily_dialog"
-    config: "default"
+  - name: "squad"
+    config: "plain_text"
     split: "train"
-    text_field: "dialog"
+    text_field: "context"
+
+  - name: "openwebtext"
+    config: "plain_text"
+    split: "train"
+    text_field: "text"
 
 # Sampling settings (for T4 GPU memory limits)
 max_samples_per_dataset: 50000

@@ -1,6 +1,4 @@
 # Dataset Configuration for LoRA Fine-tuning
-# All datasets selected to fit within T4 GPU memory constraints
-
 datasets:
   # Core LM Training
   - name: "wikitext"
@@ -51,12 +49,12 @@ datasets:
     split: "train"
     text_field: "context"
 
-  # Dialogue - SMALL alternative
-  - name: "sedthh/gutenberg_english"
-    config: "default"
+  # Additional text corpus
+  - name: "imdb"
+    config: "plain_text"
     split: "train"
-    text_field: "TEXT"
+    text_field: "text"
 
 # Sampling settings (for T4 GPU memory limits)
 max_samples_per_dataset: 50000
-validation_split: 0.1s
+validation_split: 0.1

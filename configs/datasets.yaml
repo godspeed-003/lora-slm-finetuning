@@ -1,8 +1,8 @@
 # Dataset Configuration for LoRA Fine-tuning
-# OPTIMIZED FOR COLAB FREE (3-4 hour training time)
+# OPTIMIZED FOR COLAB FREE (4-6 hour training time)
 
 datasets:
-  # Core LM Training (3 datasets)
+  # Core LM Training (2 datasets)
   - name: "wikitext"
     config: "wikitext-103-raw-v1"
     split: "train"
